@@ -47,41 +47,53 @@ main {
 .plan-heading {
   text-align: center;
 }
-.starter {
-  border: 1px solid black;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  .plan-heading {
-    background-color: #3687e49f;
-  }
-}
-.pro {
-  border: 1px solid black;
-  background-color: rgb(76, 94, 201);
-  display: flex;
-  flex-direction: column;
-  .plan-heading {
-    background-color: rgb(57, 59, 143);
-  }
-}
+.starter,
 .enterprise {
-  border: 1px solid black;
-  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Very subtle border */
+  background: rgba(255, 255, 255, 0.7); /* See-through white */
+  backdrop-filter: blur(10px); /* The magic frosted glass effect */
+  border-radius: 12px;
+  overflow: hidden; /* Keeps the header color inside the rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Soft shadow */
   display: flex;
   flex-direction: column;
-  .plan-heading {
-    background-color: gray;
-  }
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+/* The Pro card should stand out */
+.pro {
+  background: #1e293b;
+  color: white;
+  border-radius: 12px;
+  transform: scale(1.05); /* Makes it slightly larger to look "Featured" */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 button {
   background-color: #0070f3;
-  padding: 8px 10px;
+  padding: 12px 24px; /* Increase horizontal padding for a wider look */
   font-size: 1rem;
+  font-weight: 600; /* Makes the text bolder */
   color: white;
-  border-radius: 10px;
-  border-style: none;
+  border-radius: 8px; /* Slightly less round looks more "SaaS" */
+  border: none;
   cursor: pointer;
+  width: fit-content; /* Prevents the button from stretching too wide */
+
+  transition:
+    transform 0.2s,
+    background-color 0.2s; /* Smooth hover effect */
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Lifts the button slightly when you hover */
 }
 footer {
   background-color: aliceblue;
